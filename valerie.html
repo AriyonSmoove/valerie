@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Valerie ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ffe6f0, #fcd1f6, #e5c1f2);
+      background-size: 400% 400%;
+      animation: bgAnimation 15s ease infinite;
+      font-family: 'Courier New', Courier, monospace;
+      color: #333;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .envelope {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 200px;
+      background: #f36595;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 10;
+      animation: openEnvelope 4s forwards;
+      animation-delay: 1s;
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 100px solid #f48fb1;
+      transform-origin: bottom;
+      animation: flapOpen 2s forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes flapOpen {
+      0% { transform: rotateX(0deg); }
+      100% { transform: rotateX(180deg); opacity: 0; }
+    }
+
+    @keyframes openEnvelope {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+      opacity: 0;
+      animation: showContent 1s ease-in 5s forwards;
+      z-index: 5;
+      position: relative;
+    }
+
+    @keyframes showContent {
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #c2185b;
+      margin-bottom: 10px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      white-space: pre-line;
+      line-height: 1.6;
+      animation: fadeInUp 2.5s ease-in-out;
+    }
+
+    .photo {
+      width: 250px;
+      border-radius: 20px;
+      margin: 30px auto;
+      animation: float 3s ease-in-out infinite, fadeInUp 2s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .code-block {
+      text-align: left;
+      background: #212121;
+      color: #81c784;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      font-size: 0.95rem;
+      overflow: auto;
+      animation: fadeInUp 3s ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      display: none;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatHeart 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="just-the-way-you-are.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left:30%; animation-delay: 2s;"></div>
+    <div class="heart" style="left:50%; animation-delay: 4s;"></div>
+    <div class="heart" style="left:70%; animation-delay: 1s;"></div>
+    <div class="heart" style="left:90%; animation-delay: 3s;"></div>
+  </div>
+
+  <div class="envelope"></div>
+
+  <div class="content">
+    <h1>Happy National Girlfriend's Day, Valerie 💖</h1>
+
+    <img class="photo" src="valerie.jpg" alt="Photo of Us" />
+
+    <p>
+      To my beautiful Valerie,
+
+      On this special day, I just wanted to say thank you for being the light in my life.
+      Your smile brightens even my darkest days, and your laughter is the most beautiful melody I've ever heard.
+
+      This little website is just a simple gift to tell you how much you mean to me.
+      I hope it brings a smile to your face the way you always bring joy to mine.
+
+      I love you more with every line of code ❤️
+    </p>
+
+    <div class="code-block">
+<pre><code>const myLove = {
+  name: "Valerie",
+  reason: "She is amazing",
+  gift: "my heart 💖",
+  message: () => "I love you, now and always. Happy National Girlfriend's Day!"
+};
+
+console.log(myLove.message());</code></pre>
+    </div>
+  </div>
+</body>
+</html>
